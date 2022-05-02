@@ -12,7 +12,7 @@ from joblib import dump
 @hydra.main(config_path="../../conf", config_name="config")
 def main(config):
 
-    # Get first message and topic
+    # Get data, first message and topic
     df_conv = pd.read_csv(config['first_message_topic_path'])
 
     # Split data 

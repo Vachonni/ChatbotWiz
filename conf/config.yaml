@@ -9,6 +9,7 @@ first_message_topic_path: /workspaces/ChatbotWiz/data/processed/first_message_to
 # model paths
 models_folder: /workspaces/ChatbotWiz/models/
 clf_base: clf_base.joblib
+clf_HP_search: clf_HP_search.joblib
 
 
 # parsing config
