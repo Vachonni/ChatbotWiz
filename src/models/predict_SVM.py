@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 
 from sklearn import metrics
-from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.linear_model import SGDClassifier
@@ -32,17 +31,7 @@ def evaluation(model, metric, cv, X_train, X_test, y_train, y_test):
 @hydra.main(config_path="../../conf", config_name="config")
 def main(config):
 
-    # Get data
-    df_conv = pd.read_csv(config['topics_path'])
 
-    # Split data 
-    X_train, X_test, y_train, y_test = train_test_split(
-        df_conv['first_msg_user'], 
-        df_conv['topics_id'], 
-        test_size=0.2, 
-        random_state=config['seed'], 
-        stratify=df_conv['topics_id'],
-    )
 
     # Pipeline preprocess text data and create model
     text_clf = Pipeline([
