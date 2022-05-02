@@ -25,7 +25,7 @@ def main(config):
     )
 
     # Get data
-    df_conv = pd.read_csv(config['topic_modelling_folder']+config['first_message'])
+    df_conv = pd.read_csv(config['first_message_path'])
 
     # Train model and get topics id
     df_conv['topics_id'], _ = topic_model.fit_transform(df_conv['first_msg_user'])
@@ -37,7 +37,7 @@ def main(config):
     df_conv['topics_name'] = df_conv['topics_id'].apply(lambda x: getTopicName(df_topic_info, x))
 
     # Save 
-    df_conv.to_csv(config['topic_modelling_folder']+config['first_message_topic'], index=False)
+    df_conv.to_csv(config['first_message_topic_path'], index=False)
 
 
 

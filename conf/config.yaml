@@ -2,14 +2,13 @@ seed: 42
 
 # data paths
 raw_data_path: /workspaces/ChatbotWiz/data/raw/dataset.txt
-topic_modelling_folder: /workspaces/ChatbotWiz/data/processed/topic_modelling/
-first_message: first_message.csv
-first_message_topic: first_message_topic.csv
-topic_clf_folder: /workspaces/ChatbotWiz/data/processed/topic_clf/
-X_train: X_train.csv
-y_train: y_train.csv
-X_test: X_test.csv
-y_test: y_test.csv
+first_message_path: /workspaces/ChatbotWiz/data/processed/first_message.csv
+first_message_topic_path: /workspaces/ChatbotWiz/data/processed/first_message_topic.csv
+
+
+# model paths
+models_folder: /workspaces/ChatbotWiz/models/
+clf_base: clf_base.joblib
 
 
 # parsing config
