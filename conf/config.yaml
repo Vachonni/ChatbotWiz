@@ -34,3 +34,15 @@ parameters:
   - 1
   - 2
   - 5
+
+
+# To remove outputs folder created by hydra
+defaults:  
+  - _self_  
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+  
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .

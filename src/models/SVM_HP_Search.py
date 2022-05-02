@@ -31,8 +31,6 @@ def evaluation(model, metric, cv, X_train, X_test, y_train, y_test):
 @hydra.main(config_path="../../conf", config_name="config")
 def main(config):
 
-
-
     # Pipeline preprocess text data and create model
     text_clf = Pipeline([
         ('vect', CountVectorizer()),
