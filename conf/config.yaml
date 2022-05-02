@@ -1,0 +1,29 @@
+seed: 42
+
+# data paths
+raw_data_path: /workspaces/ChatbotWiz/data/raw/dataset.txt
+conv_path: /workspaces/ChatbotWiz/data/processed/conversations.csv
+topics_path: /workspaces/ChatbotWiz/data/processed/topics.csv
+
+# parsing config
+encoding: cp865
+
+# predict 
+score_metric: accuracy
+parameters: 
+  vect__ngram_range: 
+  - - 1
+    - 1
+  - - 1
+    - 2
+  vect__stop_words: 
+  - null
+  - english
+  clf__alpha: 
+  - 1
+  - 0.1
+  - 0.01
+  clf__max_iter: 
+  - 1
+  - 2
+  - 5

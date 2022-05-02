@@ -1,0 +1,4 @@
+hydra-core
+pandas
+bertopic
+sklearn
