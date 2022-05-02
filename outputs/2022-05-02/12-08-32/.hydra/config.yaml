@@ -1,5 +1,0 @@
-RAW_DATA_PATH: /workspaces/ChatbotWiz/data/raw/dataset.txt
-CONV_PATH: /workspaces/ChatbotWiz/data/processed/conversations.csv
-TOPICS_PATH: /workspaces/ChatbotWiz/data/processed/topics.csv
-ENCODING: cp865
-CONV_SPLIT: \n

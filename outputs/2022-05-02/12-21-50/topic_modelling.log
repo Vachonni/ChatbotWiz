@@ -1,2 +1,0 @@
-[2022-05-02 12:21:51,040][sentence_transformers.SentenceTransformer][INFO] - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
-[2022-05-02 12:22:06,417][sentence_transformers.SentenceTransformer][INFO] - Use pytorch device: cpu

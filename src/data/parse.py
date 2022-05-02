@@ -63,7 +63,7 @@ def main(config):
     
     print(df_conv)
 
-    df_conv.to_csv(config['conv_path'])
+    df_conv.to_csv(config['topic_modelling_folder']+config['first_message'])
 
 
 

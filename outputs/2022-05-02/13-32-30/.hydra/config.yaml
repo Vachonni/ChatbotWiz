@@ -1,6 +1,0 @@
-seed: 42
-raw_data_path: /workspaces/ChatbotWiz/data/raw/dataset.txt
-conv_path: /workspaces/ChatbotWiz/data/processed/conversations.csv
-topics_path: /workspaces/ChatbotWiz/data/processed/topics.csv
-encoding: cp865
-score_metric: accuracy
