@@ -15,7 +15,7 @@ clf_HP_search: clf_HP_search.joblib
 # parsing config
 encoding: cp865
 
-# predict 
+# clf 
 score_metric: accuracy
 parameters: 
   vect__ngram_range: 

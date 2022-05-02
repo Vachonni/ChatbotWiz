@@ -34,7 +34,7 @@ def main(config):
                             max_iter=5, tol=None)),
     ])
 
-    # Create cross validation splits 
+    # Create cross validation splits, stratified
     cv = StratifiedShuffleSplit(n_splits=5, random_state=config['seed'])
 
     # HP Search model
@@ -48,7 +48,9 @@ def main(config):
     )
 
     # Save model
-    dump(text_clf, config['models_folder']+config['clf_HP_search']) 
+    dump(gs_clf, config['models_folder']+config['clf_HP_search']) 
+
+
 
 if __name__ == "__main__":
     main()
