@@ -64,13 +64,14 @@ def main(config):
     # Create cross validation splits 
     cv = StratifiedShuffleSplit(n_splits=5, random_state=config['seed'])
 
-    # Load models
+    # Load models and evaluate them
     clf_base = load(config['models_folder']+config['clf_base']) 
     evaluation(clf_base, config['score_metric'], cv, X_train, X_test, y_train, y_test)
 
     clf_HP_search = load(config['models_folder']+config['clf_HP_search']) 
     evaluation(clf_HP_search, config['score_metric'], cv, X_train, X_test, y_train, y_test)
 
+    # Evaluate HugginFace zero-shot
     evaluate_HGF_zero_shot(X_test, y_test)
 
 
