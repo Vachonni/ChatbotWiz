@@ -1,4 +1,3 @@
-hydra-core
-pandas
-bertopic
-sklearn
+hydra-core==1.1.2
+pandas==1.4.2
+bertopic==0.10.0

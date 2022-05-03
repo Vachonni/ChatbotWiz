@@ -41,10 +41,10 @@ def main(config):
     params = dict(config['parameters'])   # Need to be dict for HP search
     gs_clf = GridSearchCV(text_clf, params, cv=cv, n_jobs=-1, scoring=config['score_metric'])
     gs_clf = gs_clf.fit(X_train, y_train)
-    print(f'\n**HP CLF SCORE: {gs_clf.best_score_} and Best HP found:')
+    print(f'\nHP BEST CLF SCORE: {gs_clf.best_score_} and Best HP found:')
     for param_name in sorted(params.keys()):
         print("%s: %r" % (param_name, gs_clf.best_params_[param_name]))
-    print(pd.DataFrame(gs_clf.cv_results_)
+    print('\n', pd.DataFrame(gs_clf.cv_results_)
     )
 
     # Save model
