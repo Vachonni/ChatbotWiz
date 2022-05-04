@@ -11,6 +11,9 @@ logger = logging.getLogger(__name__)
 
 
 def getSender(event):
+    """
+    Function that identifies the sender of an event.
+    """
     try:
         sender = re.search(r'^[\s\S]*{(.*?)}transType ', event).group(1)
     except AttributeError:
@@ -20,6 +23,9 @@ def getSender(event):
 
 
 def getMessage(event):
+    """
+    Function to get the message in an event 
+    """
     try:
         msg = re.search(r'^[\s\S]*{(.*?)}fAct ', event).group(1)
     except AttributeError:
@@ -29,6 +35,10 @@ def getMessage(event):
 
 
 def firstMessageUser(row):
+    """
+    Function that takes a row from a DF, select the unquote string,
+    divide it into events and returns the first message from the cusotmer.
+    """
     # Split all events from converation
     events = re.findall(r'{(.*?)}}', row['unquote_str'])
     # For each event, find sender
