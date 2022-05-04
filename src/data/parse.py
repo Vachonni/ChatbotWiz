@@ -1,10 +1,13 @@
 import hydra
 import re
+import logging
 
 import pandas as pd
 
 from urllib.parse import unquote_plus
 
+
+logger = logging.getLogger(__name__)
 
 
 def getSender(event):
@@ -26,7 +29,6 @@ def getMessage(event):
 
 
 def firstMessageUser(row):
-
     # Split all events from converation
     events = re.findall(r'{(.*?)}}', row['unquote_str'])
     # For each event, find sender
@@ -39,6 +41,7 @@ def firstMessageUser(row):
 
 @hydra.main(config_path="../../conf", config_name="config")
 def main(config):
+
     # Load data
     with open(config['raw_data_path'], 'r') as file:
         raw_str = file.read()
@@ -61,7 +64,8 @@ def main(config):
     # Clean
     df_conv = df_conv.dropna()
     
-    print(df_conv)
+    logger.info('DataFrame of first user message.')
+    logger.info(df_conv)
 
     df_conv.to_csv(config['first_message_path'], index=False)
 
