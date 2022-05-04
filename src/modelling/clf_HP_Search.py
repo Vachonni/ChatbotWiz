@@ -1,5 +1,6 @@
 import hydra
 import pandas as pd
+import logging
 
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
@@ -8,6 +9,8 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.model_selection import StratifiedShuffleSplit, GridSearchCV
 from joblib import dump
 
+
+logger = logging.getLogger(__name__)
 
 
 @hydra.main(config_path="../../conf", config_name="config")
@@ -41,11 +44,12 @@ def main(config):
     params = dict(config['parameters'])   # Need to be dict for HP search
     gs_clf = GridSearchCV(text_clf, params, cv=cv, n_jobs=-1, scoring=config['score_metric'])
     gs_clf = gs_clf.fit(X_train, y_train)
-    print(f'\nHP BEST CLF SCORE: {gs_clf.best_score_} and Best HP found:')
+    logger.info(f'HP search - Clf best score is: {gs_clf.best_score_}, with following HP:')
     for param_name in sorted(params.keys()):
-        print("%s: %r" % (param_name, gs_clf.best_params_[param_name]))
-    print('\n', pd.DataFrame(gs_clf.cv_results_)
-    )
+        logger.info("%s: %r" % (param_name, gs_clf.best_params_[param_name]))
+    logger.debug('List of trials during HP search:')
+    logger.debug(f'\n{pd.DataFrame(gs_clf.cv_results_)}')
+
 
     # Save model
     dump(gs_clf, config['models_folder']+config['clf_HP_search']) 
