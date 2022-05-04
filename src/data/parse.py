@@ -64,8 +64,8 @@ def main(config):
     # Clean
     df_conv = df_conv.dropna()
     
-    logger.info('DataFrame of first user message.')
-    logger.info(df_conv)
+    logger.debug('DataFrame of first user message.')
+    logger.debug(f'\n{df_conv}')
 
     df_conv.to_csv(config['first_message_path'], index=False)
 
