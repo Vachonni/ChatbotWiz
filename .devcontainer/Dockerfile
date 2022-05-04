@@ -40,9 +40,8 @@ RUN curl https://packages.microsoft.com/config/debian/9/prod.list > /etc/apt/sou
 ####################################
 
 COPY . /home
-RUN conda create --name myenv python=3.9.5
-RUN conda env list
-SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"]
+RUN conda create --name wiz python=3.9.5
+SHELL ["conda", "run", "-n", "wiz", "/bin/bash", "-c"]
 RUN pip install -r /home/requirements.txt
 
 ##################
