@@ -18,9 +18,9 @@ Include the steps:
 
 After cloning the repo and getting into it, create a conda environment and install the requirements by running the following commands in your terminal (replace `<ENV_NAME>` with the environment name you want to use)
 
- `conda create --name <ENV_NAME> python=3.9.5
- conda activate <ENV_NAME>
- pip install -r requirements.txt`
+  `conda create --name <ENV_NAME> python=3.9.5`
+  `conda activate <ENV_NAME>`
+  `pip install -r requirements.txt`
 
 #### Docker container
 
