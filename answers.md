@@ -115,6 +115,14 @@ Both **clf base** and **clf HP search** provide the same results on the test set
 
 The zero-shot classification model from Huggingface achieves the best results on the test set. This might be explained by the tiny amount of data available to train the classifiers.
 
+Confusion matrices are also output by the algorithm. Both classifier trained in this exercice have the same result, indicating a topic 1 being predicted as topic 2.
+
+| 2          | 1             | 0     |
+| :---:      |    :----:     | :---: |          
+| **0**      | **2**         | **0**    |
+| **0**      | **0**         | **2**     |        
+
+
 
 ### Ressources: Time & compute
 
