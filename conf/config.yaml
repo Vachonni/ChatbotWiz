@@ -1,13 +1,13 @@
 seed: 42
 
 # data paths
-raw_data_path: /workspaces/ChatbotWiz/data/raw/dataset.txt
-first_message_path: /workspaces/ChatbotWiz/data/processed/first_message.csv
-first_message_topic_path: /workspaces/ChatbotWiz/data/processed/first_message_topic.csv
+raw_data_path: data/raw/dataset.txt
+first_message_path: data/processed/first_message.csv
+first_message_topic_path: data/processed/first_message_topic.csv
 
 
 # model paths
-models_folder: /workspaces/ChatbotWiz/models/
+models_folder: models/
 clf_base: clf_base.joblib
 clf_HP_search: clf_HP_search.joblib
 
