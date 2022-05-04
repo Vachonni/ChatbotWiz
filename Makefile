@@ -1,5 +1,8 @@
-run: parse_raw find_topics clf_base clf_HP evaluate
+run: test parse_raw find_topics clf_base clf_HP evaluate
 
+
+test:
+	pytest
 
 parse_raw:
 	python -m src.data.parse
